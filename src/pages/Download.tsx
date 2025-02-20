@@ -59,13 +59,15 @@ export default function Download() {
                             </p>
                             <div className="space-y-4">
                                 <a 
-                                    href="/public/grynz.exe" 
+                                    href="/downloads/windows/grynz.exe" 
+                                    download
                                     className="block w-full px-4 py-2 bg-transparent border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-500/10 transition-colors text-center"
                                 >
                                     Universal Binary
                                 </a>
                                 <a 
-                                    href="/public/GrynzInstaller.exe" 
+                                    href="/downloads/windows/GrynzInstaller.exe" 
+                                    download
                                     className="block w-full px-4 py-2 bg-transparent border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-800 transition-colors text-center"
                                 >
                                     Installer
@@ -86,7 +88,8 @@ export default function Download() {
                             </p>
                             <div className="space-y-4">
                                 <a 
-                                    href="/public/grynz" 
+                                    href="/downloads/linux/grynz" 
+                                    download
                                     className="block w-full px-4 py-2 bg-transparent border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-500/10 transition-colors text-center"
                                 >
                                     Universal Binary
