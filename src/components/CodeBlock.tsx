@@ -17,15 +17,15 @@ export default function CodeBlock({ code, language = 'bash' }: CodeBlockProps) {
 
     return (
         <div className="relative group">
-            <pre className={`language-${language} bg-gray-900 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto`}>
+            <pre className={`language-${language} bg-[#102542]/30 rounded-lg p-4 overflow-x-auto`}>
                 <code className="text-sm text-gray-100">{code}</code>
             </pre>
             <button
                 onClick={copyToClipboard}
-                className="absolute top-2 right-2 p-2 rounded-md bg-gray-800 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute top-2 right-2 p-2 rounded-md bg-[#102542]/80 text-[#f87060] opacity-0 group-hover:opacity-100 transition-opacity"
             >
                 {copied ? <Check size={16} /> : <Copy size={16} />}
             </button>
         </div>
     );
-} 
+}

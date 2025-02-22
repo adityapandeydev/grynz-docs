@@ -24,7 +24,7 @@ export default function Search() {
                 <input
                     type="text"
                     placeholder="Search documentation..."
-                    className="w-full px-3 sm:px-4 py-2 text-sm border rounded-lg dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent"
+                    className="w-full px-3 sm:px-4 py-2 text-sm border rounded-lg border-gray-700 bg-[#102542]/50 text-gray-100 focus:ring-2 focus:ring-[#f87060] focus:border-transparent"
                     value={query}
                     onChange={(e) => {
                         setQuery(e.target.value);
@@ -34,12 +34,12 @@ export default function Search() {
                 />
             </div>
             {isOpen && query && (
-                <div className="absolute w-full mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 z-50">
+                <div className="absolute w-full mt-2 bg-[#102542] rounded-lg shadow-lg border border-gray-700 z-50">
                     <ul className="py-2">
                         {filteredDocs.map((doc) => (
                             <li 
                                 key={doc.href}
-                                className="px-3 sm:px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                                className="px-3 sm:px-4 py-2 text-sm hover:bg-[#f87060]/10 cursor-pointer text-gray-200"
                                 onClick={() => {
                                     navigate(doc.href);
                                     setIsOpen(false);

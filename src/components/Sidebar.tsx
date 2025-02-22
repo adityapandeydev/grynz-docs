@@ -22,11 +22,11 @@ export default function Sidebar() {
     const location = useLocation();
 
     return (
-        <aside className="w-72 border-r border-gray-200 dark:border-gray-800 min-h-screen bg-gray-50 dark:bg-gray-900">
+        <aside className="w-72 border-r border-gray-800 min-h-screen bg-[#102542]/95">
             <div className="sticky top-0 p-6">
                 <Link to="/" className="flex items-center space-x-3 mb-8">
-                    <span className="h-8 w-8 rounded-lg bg-blue-600"></span>
-                    <span className="text-xl font-bold dark:text-white">Grynz</span>
+                    <span className="h-8 w-8 rounded-lg bg-[#f87060]"></span>
+                    <span className="text-xl font-bold text-white">Grynz</span>
                 </Link>
                 <nav className="space-y-6">
                     {sections.map((section, index) => (
@@ -40,8 +40,8 @@ export default function Sidebar() {
                                         <Link 
                                             className={`block px-3 py-2 rounded-md text-sm ${
                                                 location.pathname === link.href
-                                                    ? "bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100"
-                                                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                                    ? "bg-[#f87060]/20 text-[#f87060]"
+                                                    : "text-gray-400 hover:bg-[#102542]/60"
                                             }`}
                                             to={link.href}
                                         >
