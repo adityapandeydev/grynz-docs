@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Docs() {
+    const [showLanguages, setShowLanguages] = useState(false);
+    const supportedLanguages = [
+        'C', 'C++', 'Erlang', 'Elixir', 'Go', 'Java', 
+        'JavaScript', 'Kotlin', 'Python', 'Rust', 'TypeScript', 'Zig'
+    ];
+
     return (
         <div className="min-h-screen bg-[#102542] flex flex-col">
             {/* Background Effects */}
@@ -62,10 +69,29 @@ export default function Docs() {
 
                         <h3 className="text-sm font-semibold text-gray-400 uppercase mt-8 mb-4">Features</h3>
                         <ul className="space-y-3">
-                            <li>
-                                <Link to="/docs/languages" className="text-white hover:text-[#f87060] transition-colors">
+                            <li 
+                                className="relative"
+                                onMouseEnter={() => setShowLanguages(true)}
+                                onMouseLeave={() => setShowLanguages(false)}
+                            >
+                                <span className="text-white cursor-default">
                                     Supported Languages
-                                </Link>
+                                </span>
+                                {showLanguages && (
+                                    <div className="mt-2 w-full bg-[#1a365d] rounded-lg shadow-lg py-2 px-3">
+                                        <div className="grid grid-cols-2 gap-2">
+                                            {supportedLanguages.map((lang) => (
+                                                <Link 
+                                                    key={lang} 
+                                                    to={`/docs/languages/${lang.toLowerCase()}`}
+                                                    className="text-sm text-gray-300 hover:text-[#f87060] transition-colors"
+                                                >
+                                                    {lang}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
                             </li>
                             <li>
                                 <Link to="/docs/commands" className="text-white hover:text-[#f87060] transition-colors">
